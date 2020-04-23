@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: facerecognition
+spec:
+  containers:
+  - name: facerecognition
+    image: particule/facerecognition
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo hello; sleep 10;done"]
+    resources:
+      limits:
+         nvidia.com/gpu: 1
